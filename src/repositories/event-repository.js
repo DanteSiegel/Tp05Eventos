@@ -10,13 +10,13 @@ export default class EventRepository {
     async BusquedaEvento(name, category, startDate, tag, page, pageSize) {
         const intPage = parseInt(page);
         const intPageSize = parseInt(pageSize);
-
+    
         let queryAgregado = '';
         if (name) queryAgregado += `AND e.name = '${name}' `;
-        if (startDate) queryAgregado += `AND e.start_date = '${startDate}' `;
+        if (startDate) queryAgregado += `AND DATE_TRUNC('day', e.start_date) = '${startDate}'::date`;
         if (category) queryAgregado += `AND ec.name = '${category}' `;
         if (tag) queryAgregado += `AND t.name = '${tag}' `;
-
+    
         const sql = `
             SELECT e.id, e.name, e.description, e.start_date, e.duration_in_minutes, e.price, e.enabled_for_enrollment, e.max_assistance,
             json_build_object(
@@ -72,6 +72,7 @@ export default class EventRepository {
         const response = await this.DBClient.query(sql);
         return response.rows;
     }
+    
 
     async DetalleEvento(id) {
         const sql = `

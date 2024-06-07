@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "9df28698-4408-4fdf-a3a7-70bf8e0218a7",
+		"name": "TP05",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Punto 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Punto 2 A",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/event/?name=Concert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"event",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Concert"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Punto 2 B",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/event/?category=Technology",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"event",
+						""
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Technology"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Punto 2 C",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/event/?startdate=2024-06-03T17:00:00.000Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"event",
+						""
+					],
+					"query": [
+						{
+							"key": "startdate",
+							"value": "2024-06-03T17:00:00.000Z"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

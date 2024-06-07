@@ -11,7 +11,7 @@ export default class EventService {
             nextPage: `http://localhost:3508/api/event?limit=${parseInt(pageSize)}&offset=${parseInt(page) + pageSize}`,
         };
     }
-
+//Falta buscar evento por fecha
     DetalleEvento = async (id) => {
         const repo = new EventRepository();
         const returnArray = await repo.DetalleEvento(id);
