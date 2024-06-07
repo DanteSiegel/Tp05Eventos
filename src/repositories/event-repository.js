@@ -1,13 +1,12 @@
 import pg from "pg";
-import { DBconfig } from "../../src/configs/db-config.js";
+import config from "../../src/configs/db-config.js";
 
 export default class EventRepository {
     constructor() {
         const { Client } = pg;
-        this.DBClient = new Client(DBconfig);
+        this.DBClient = new Client(config);
         this.DBClient.connect();
     }
-
     async BusquedaEvento(name, category, startDate, tag, page, pageSize) {
         const intPage = parseInt(page);
         const intPageSize = parseInt(pageSize);
