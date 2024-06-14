@@ -8,7 +8,7 @@ export default class EventService {
             collection: returnArray,
             pageSize: pageSize,
             page: page,
-            nextPage: `http://localhost:3508/api/event?limit=${parseInt(pageSize)}&offset=${parseInt(page) + pageSize}`,
+            nextPage: `http://localhost:3000/api/event?limit=${parseInt(pageSize)}&offset=${parseInt(page) + pageSize}`,
         };
     }
 //Falta buscar evento por fecha
